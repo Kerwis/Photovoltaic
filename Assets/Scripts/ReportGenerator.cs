@@ -55,7 +55,7 @@ public class ReportGenerator : MonoBehaviour
 
 		smtpServer = new SmtpClient("smtp.gmail.com");
 		smtpServer.Port = 587;
-		smtpServer.Credentials = new System.Net.NetworkCredential("8gftid@gmail.com", "qwerty$$!!");
+		smtpServer.Credentials = new System.Net.NetworkCredential("8gftid@gmail.com", "Qwerty2810$$!!");
 		smtpServer.EnableSsl = true;
 		ServicePointManager.ServerCertificateValidationCallback =
 			delegate(object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
