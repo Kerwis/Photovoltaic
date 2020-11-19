@@ -134,6 +134,11 @@ public class Manager : MonoBehaviour
 		Application.OpenURL(websideAdress);
 	}
 
+	public void OpenEquipChoosePanel()
+	{
+		//TODO
+	}
+
 	public void SetkWhPrice(string value)
 	{
 		if (float.TryParse(value, out providerKWhCost))
