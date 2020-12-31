@@ -74,13 +74,13 @@ public class CatalogCard : MonoBehaviour
         {
             if (Input.GetTouch(0).deltaPosition.x > 0)
             {
-                if (catalogIndex < producer.catalogs.Capacity - 1 &&
-                    producer.catalogs[catalogIndex + 1].power <= panelPower)
+                if (panelCatalogIndex < PanelsProducer.catalogs.Capacity - 1 &&
+                    PanelsProducer.catalogs[panelCatalogIndex + 1].power <= panelPower)
                     panelCatalogIndex++;
             }
             else
             {
-                if (catalogIndex > 0 && producer.catalogs[catalogIndex - 1].power >= panelPower)
+                if (panelCatalogIndex > 0 && PanelsProducer.catalogs[panelCatalogIndex - 1].power >= panelPower)
                     panelCatalogIndex--;
             }
         }
