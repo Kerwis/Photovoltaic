@@ -82,13 +82,16 @@ public class ReportGenerator : MonoBehaviour
 	{
 		using (var webClient = new WebClient())
 		{
-			webClient.DownloadFile(CatalogCard.PanelsCatalog.url, CatalogCard.PanelsProducer.name + CatalogCard.PanelsCatalog.power + ".pdf");
+			webClient.DownloadFile(CatalogCard.PanelsCatalog.url, CatalogCard.PanelSaveName);
 		}
 	}
 
 	private void AddFalownik()
 	{
-		
+		using (var webClient = new WebClient())
+		{
+			webClient.DownloadFile(CatalogCard.PanelsCatalog.url, CatalogCard.FalownikSaveName);
+		}
 	}
 
 	private void SendEmail(string email)
@@ -114,7 +117,7 @@ public class ReportGenerator : MonoBehaviour
 		Attachment panelPDF = new Attachment(CatalogCard.PanelSaveName, System.Net.Mime.MediaTypeNames.Application.Octet);
 		mail.Attachments.Add(panelPDF);
 		
-		Attachment falownikPDF = new Attachment(CatalogCard.FalownikSaveName + ".pdf", System.Net.Mime.MediaTypeNames.Application.Octet);
+		Attachment falownikPDF = new Attachment(CatalogCard.FalownikSaveName, System.Net.Mime.MediaTypeNames.Application.Octet);
 		mail.Attachments.Add(falownikPDF);
 		
 		try

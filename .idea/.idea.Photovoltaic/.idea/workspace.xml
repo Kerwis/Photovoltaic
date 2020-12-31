@@ -20,7 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cccc33d5-a8ef-4356-8680-bfe89bdcec93" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CatalogCard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CatalogCard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Photovoltaic/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Photovoltaic/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ReportGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ReportGenerator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,10 +50,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Slide.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UserDataPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Config/PanelsPDFConfig.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ReportGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Manager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Config/FalownikPDFConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CatalogCard.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ReportGenerator.cs" />
       </list>
     </option>
   </component>
@@ -110,7 +112,7 @@
       <workItem from="1598965159721" duration="192000" />
       <workItem from="1598965574228" duration="21000" />
       <workItem from="1605817554589" duration="12600000" />
-      <workItem from="1609351480468" duration="19855000" />
+      <workItem from="1609351480468" duration="20459000" />
     </task>
     <servers />
   </component>
