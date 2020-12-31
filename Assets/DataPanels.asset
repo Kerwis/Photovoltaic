@@ -1,0 +1,145 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed9e2c87de334f8089d3a323090398a7, type: 3}
+  m_Name: DataPanels
+  m_EditorClassIdentifier: 
+  producers:
+  - name: Rosen
+    catalogs:
+    - power: 300
+      url: http://fotowoltaika.gft.pl/wp-content/uploads/2020/06/Panel-ROSEN-SOLAR-300_330W-efektywno%C5%9B%C4%87-20.pdf
+  - name: Risen
+    catalogs:
+    - power: 330
+      url: http://fotowoltaika.gft.pl/wp-content/uploads/2020/06/RISEN_RSM120-6-325-340M_G2.3_Plus_Czarna_rama.pdf
+    - power: 340
+      url: http://fotowoltaika.gft.pl/wp-content/uploads/2020/06/RISEN_RSM120-6-325-340M_G2.3_Plus_Czarna_rama.pdf
+    - power: 360
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/RSM132-6-360-380M-G2.3-Plus-IECUL1500V-35mm-2020H1-1-Corab_PL_Black_-dlugi-kabel.pdf
+    - power: 370
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/RSM132-6-360-380M-G2.3-Plus-IECUL1500V-35mm-2020H1-1-Corab_PL_Black_-dlugi-kabel.pdf
+    - power: 380
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/RSM132-6-360-380M-G2.3-Plus-IECUL1500V-35mm-2020H1-1-Corab_PL_Black_-dlugi-kabel.pdf
+    - power: 430
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/RSM144-7-430M-450M.pdf
+    - power: 440
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/RSM144-7-430M-450M.pdf
+    - power: 450
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/RSM144-7-430M-450M.pdf
+    - power: 480
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/RSM150-8-480-500M-G5.3-IEC1500V-40mm-2020H1-2-EN.pdf
+    - power: 490
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/RSM150-8-480-500M-G5.3-IEC1500V-40mm-2020H1-2-EN.pdf
+    - power: 500
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/RSM150-8-480-500M-G5.3-IEC1500V-40mm-2020H1-2-EN.pdf
+  - name: Longi
+    catalogs:
+    - power: 350
+      url: http://fotowoltaika.gft.pl/wp-content/uploads/2020/08/LONGI-350-380.pdf
+    - power: 355
+      url: http://fotowoltaika.gft.pl/wp-content/uploads/2020/08/LONGI-350-380.pdf
+    - power: 360
+      url: http://fotowoltaika.gft.pl/wp-content/uploads/2020/08/LONGI-350-380.pdf
+    - power: 365
+      url: http://fotowoltaika.gft.pl/wp-content/uploads/2020/08/LONGI-350-380.pdf
+    - power: 370
+      url: http://fotowoltaika.gft.pl/wp-content/uploads/2020/08/LONGI-350-380.pdf
+    - power: 375
+      url: http://fotowoltaika.gft.pl/wp-content/uploads/2020/08/LONGI-350-380.pdf
+    - power: 380
+      url: http://fotowoltaika.gft.pl/wp-content/uploads/2020/08/LONGI-350-380.pdf
+    - power: 420
+      url: http://fotowoltaika.gft.pl/wp-content/uploads/2020/08/LONGI-420-440.pdf
+    - power: 430
+      url: http://fotowoltaika.gft.pl/wp-content/uploads/2020/08/LONGI-420-440.pdf
+    - power: 440
+      url: http://fotowoltaika.gft.pl/wp-content/uploads/2020/08/LONGI-420-440.pdf
+    - power: 425
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/11/LR4-72HPH-425-455M-KARTA-KATALOGOWA-PL-3.pdf
+    - power: 430
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/11/LR4-72HPH-425-455M-KARTA-KATALOGOWA-PL-3.pdf
+    - power: 435
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/11/LR4-72HPH-425-455M-KARTA-KATALOGOWA-PL-3.pdf
+    - power: 440
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/11/LR4-72HPH-425-455M-KARTA-KATALOGOWA-PL-3.pdf
+    - power: 445
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/11/LR4-72HPH-425-455M-KARTA-KATALOGOWA-PL-3.pdf
+    - power: 450
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/11/LR4-72HPH-425-455M-KARTA-KATALOGOWA-PL-3.pdf
+    - power: 455
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/11/LR4-72HPH-425-455M-KARTA-KATALOGOWA-PL-3.pdf
+  - name: JA Solar
+    catalogs:
+    - power: 365
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/JAM60S20-365-390-MR-BF_karta-katologowa-2.pdf
+    - power: 370
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/JAM60S20-365-390-MR-BF_karta-katologowa-2.pdf
+    - power: 375
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/JAM60S20-365-390-MR-BF_karta-katologowa-2.pdf
+    - power: 380
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/JAM60S20-365-390-MR-BF_karta-katologowa-2.pdf
+    - power: 385
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/JAM60S20-365-390-MR-BF_karta-katologowa-2.pdf
+    - power: 390
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/jam72s10-390-410-mr-sr.pdf
+    - power: 400
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/jam72s10-390-410-mr-sr.pdf
+    - power: 410
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/jam72s10-390-410-mr-sr.pdf
+    - power: 440
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/jam72s20-440-465_mr_karta_katalogowa.pdf
+    - power: 445
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/jam72s20-440-465_mr_karta_katalogowa.pdf
+    - power: 450
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/jam72s20-440-465_mr_karta_katalogowa.pdf
+    - power: 455
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/jam72s20-440-465_mr_karta_katalogowa.pdf
+    - power: 460
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/jam72s20-440-465_mr_karta_katalogowa.pdf
+    - power: 465
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/jam72s20-440-465_mr_karta_katalogowa.pdf
+  - name: Winaico
+    catalogs:
+    - power: 325
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/325-330-WST-M6-PERC-25lat-gwarancji-na-produkt-Winaico.pdf
+    - power: 330
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/325-330-WST-M6-PERC-25lat-gwarancji-na-produkt-Winaico.pdf
+    - power: 340
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/320-340-MX_25lat-gwarancji-na-produkt-Series-mono-PL.pdf
+  - name: LG
+    catalogs:
+    - power: 325
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/325-340_LG_NeON2_Black_25lat-gw.pdf
+    - power: 330
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/325-340_LG_NeON2_Black_25lat-gw.pdf
+    - power: 335
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/325-340_LG_NeON2_Black_25lat-gw.pdf
+    - power: 340
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/325-340_LG_NeON2_Black_25lat-gw.pdf
+    - power: 345
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/340-355_LG_NeON2_25lat-gw.pdf
+    - power: 350
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/340-355_LG_NeON2_25lat-gw.pdf
+    - power: 355
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/340-355_LG_NeON2_25lat-gw.pdf
+    - power: 360
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/355-370_LG_NeON_R_Prime_25lat-gw.pdf
+    - power: 365
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/355-370_LG_NeON_R_Prime_25lat-gw.pdf
+    - power: 370
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/355-370_LG_NeON_R_Prime_25lat-gw.pdf
+    - power: 375
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/360-375_LG_NeON_R_25lat-gw.pdf
+    - power: 400
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/400-405_LG_NeON2_BiFacial_25lat-gw.pdf
+    - power: 405
+      url: https://fotowoltaika.gft.pl/wp-content/uploads/2020/12/400-405_LG_NeON2_BiFacial_25lat-gw.pdf

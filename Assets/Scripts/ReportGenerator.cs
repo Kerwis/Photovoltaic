@@ -46,6 +46,9 @@ public class ReportGenerator : MonoBehaviour
 			slide.SetPage(i - 1);
 			CreateReportPage(i);
 		}
+
+		AddPanel();
+		AddFalownik();
 		
 		document.createPDF(Path.Combine(path, reportName + ".pdf"));
 
@@ -75,6 +78,19 @@ public class ReportGenerator : MonoBehaviour
 		Debug.Log("Finish create report");
 	}
 
+	private void AddPanel()
+	{
+		using (var webClient = new WebClient())
+		{
+			webClient.DownloadFile(CatalogCard.PanelsCatalog.url, CatalogCard.PanelsProducer.name + CatalogCard.PanelsCatalog.power + ".pdf");
+		}
+	}
+
+	private void AddFalownik()
+	{
+		
+	}
+
 	private void SendEmail(string email)
 	{
 		//TODO Set cover screan
@@ -95,7 +111,12 @@ public class ReportGenerator : MonoBehaviour
 
 		Attachment data = new Attachment(Path.Combine(path, reportName + ".pdf"), System.Net.Mime.MediaTypeNames.Application.Octet);
 		mail.Attachments.Add(data);
-
+		Attachment panelPDF = new Attachment(CatalogCard.PanelSaveName, System.Net.Mime.MediaTypeNames.Application.Octet);
+		mail.Attachments.Add(panelPDF);
+		
+		Attachment falownikPDF = new Attachment(CatalogCard.FalownikSaveName + ".pdf", System.Net.Mime.MediaTypeNames.Application.Octet);
+		mail.Attachments.Add(falownikPDF);
+		
 		try
 		{
 			smtpServer.Send(mail);

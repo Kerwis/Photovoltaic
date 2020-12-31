@@ -19,13 +19,21 @@ public class Slide : MonoBehaviour
 
     private void Start()
     {
-        ShowHintIfNeed = false;
+        ShowHintIfNeed = true;
         HideHint();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+            SetPage(0);
+        if(Input.GetKeyDown(KeyCode.Alpha2))
+            SetPage(1);
+        if(Input.GetKeyDown(KeyCode.Alpha3))
+            SetPage(2);
+        if(Input.GetKeyDown(KeyCode.Alpha4))
+            SetPage(3);
         if (ShowHintIfNeed)
         {
             idleTime += Time.deltaTime;

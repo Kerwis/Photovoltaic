@@ -7,11 +7,11 @@ public class UserDataPanel : MonoBehaviour
 
 	public ReportGenerator reportGenerator;
 	
-	public Text userName;
-	public Text location;
-	public Text email;
-	public Text phone;
-	public Text emailTrader;
+	public InputField userName;
+	public InputField location;
+	public InputField email;
+	public InputField phone;
+	public InputField emailTrader;
 	
 	public Text userNamePlaceholder;
 	public Text locationPlaceholder;
@@ -27,8 +27,8 @@ public class UserDataPanel : MonoBehaviour
 
 	public void Show()
 	{
-		transform.localPosition = Vector3.zero;
 		gameObject.SetActive(true);
+		transform.localPosition = Vector3.zero;
 	}
 
 	public void TrySendReport()

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
-using System.IO;
-using System.Net;
+using Config;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,10 +9,15 @@ public class Manager : MonoBehaviour
 	private readonly string phoneNumber = "733443344";
 	private readonly string websideAdress = "http://fotowoltaika.gft.pl/";
 	private readonly float fiveKDonationLimit = 10;
-	private readonly float panelArea = 1.66f;
+	private readonly float panelSmallArea = 1.66f;
+	private readonly float panelBigArea = 2.22f;
+	private readonly float optimizerCost = 280;
+	private readonly float co2ReductionFactor = 0.000812f;
 	
-	public PowerCostConfig config;
+	public PowerCostConfig powerCostConfig;
+	public GroundPriceConfig groundPriceConfig;
 	public Slider slider;
+	public CatalogCard catalogCard;
 	public Text price;
 	public Text annualCostLabel;
 	public Text installationPowerLabel;
@@ -27,6 +31,7 @@ public class Manager : MonoBehaviour
 	public Text savingAfterYearsLabel;
 	public Text monthlyKWhProductionLabel;
 	public Text annualKWhProductionLabel;
+	public Text co2SavingKGLabel;
 	public InputField kWhPriceLabel;
 	public Text kWhProductionPerLabel;
 	public Text investmentBackAfterNoDonationLabel;
@@ -34,17 +39,22 @@ public class Manager : MonoBehaviour
 
 	public Toggle ground;
 	public Toggle ceramics;
-	public InputField panelPowerLabel;
+	public Toggle optimizer;
+	//public InputField panelPowerLabel;
 	public Text panelCountLabel;
 	public Text panelAreaLabel;
 	public Text areaLabel;
 
+	public Text costWithDonationLastPageLabel;
+	public InputField finalCost;
+
+	public GameObject sliderHint;
     
 	private float providerKWhCost = 0.67f;
 	private float panelPower = 330;
 	private float kWhProductAnnual = 960f;
-	private float groundExtraCost = 60;
-	private float ceramicsExtraCost = 40;
+	private float GroundExtraCost => groundPriceConfig.groundExtraCost;
+	private float CeramicsExtraCost => groundPriceConfig.ceramicsExtraCost;
 
 	private bool farmer;
 	private bool activeFiveK = true;
@@ -52,7 +62,9 @@ public class Manager : MonoBehaviour
 	private bool farmerTax = true;
 	private bool farmerDonation = true;
 	private float annualCost;
-	private float installationPower;
+	private static float installationPower = 3;
+	
+	public static float InstallationPower => installationPower;
 
 	private float costWithDonation;
 	private float annualSaving;
@@ -60,6 +72,7 @@ public class Manager : MonoBehaviour
 	private float savingAfterYears;
 	private float monthlyKWhProduction;
 	private float annualKWhProduction;
+	private float co2SavingKG;
 	private float kWhPrice;
 	private float kWhProductionPer;
 	private float investmentBackAfterNoDonation;
@@ -67,7 +80,7 @@ public class Manager : MonoBehaviour
 
 	private float panelCount;
 	private float area;
-
+	private float panelArea;
 
 	public void ChangeCustomerBase(bool isFarmer)
 	{
@@ -103,13 +116,24 @@ public class Manager : MonoBehaviour
 
 	public void SlideValueHandler(float value)
 	{
+		sliderHint.SetActive(false);
+		SetSliderValue(value);
+	}
+
+	public void SetSliderValue(float value)
+	{
 		Debug.Log("Set slider to " + value);
-		Slide.ShowHintIfNeed = true;
+		
 		value = RoundValue(value, 50);
 		slider.value = value;
 		price.text = value + "zł";
 
-		SetAllValues(value);
+		SetAllValues(value);	
+	}
+
+	public void Recalculate()
+	{
+		SetAllValues(slider.value);
 	}
 
 	private void SetAllValues(float value)
@@ -117,11 +141,13 @@ public class Manager : MonoBehaviour
 		SetAnnualCost(value);
 		SetProductionPower();
 		SetKWhProduction(value);
+		SetCO2Saving();
 		SetInfo();
 		SetInstallationCost(installationPower);
 		SetSaving(annualKWhProduction);
 		SetProduction();
 		SetInvestmentBack();
+		SetFinalCost();
 	}
 
 	public void OpenPhone()
@@ -134,11 +160,6 @@ public class Manager : MonoBehaviour
 		Application.OpenURL(websideAdress);
 	}
 
-	public void OpenEquipChoosePanel()
-	{
-		//TODO
-	}
-
 	public void SetkWhPrice(string value)
 	{
 		if (float.TryParse(value, out providerKWhCost))
@@ -148,12 +169,18 @@ public class Manager : MonoBehaviour
 		}
 	}
 
+	public void SetPanelsPower(float power)
+	{
+		panelPower = catalogCard.SetPanelPower(power);
+		SetAllValues(slider.value);
+	}
 	public void SetPanelsPower(string value)
 	{
 		if (float.TryParse(value, out panelPower))
 		{
-			panelPower = Mathf.Clamp(panelPower, 280, 500);
+			panelPower = Mathf.Clamp(panelPower, 280, 700);
 			SetAllValues(slider.value);
+			catalogCard.SetPanelPower(panelPower);
 		}
 	}
 
@@ -168,12 +195,21 @@ public class Manager : MonoBehaviour
 
 	private void SetInfo()
 	{
-		panelPowerLabel.text = panelPower.ToString();
+		//panelPowerLabel.text = panelPower.ToString();
 
 		panelCount = installationPower * 1000 / panelPower;
 		panelCount = Mathf.Ceil(panelCount);
 		panelCountLabel.text = panelCount.ToString();
 
+		if (panelPower > 370)
+		{
+			panelArea = panelBigArea;
+		}
+		else
+		{
+			panelArea = panelSmallArea;
+		}
+		
 		panelAreaLabel.text = panelArea.ToString();
 
 		area = panelCount * panelArea;
@@ -200,11 +236,18 @@ public class Manager : MonoBehaviour
 
 	private void SetInstallationCost(float production)
 	{
-		costNoDonation = config.powerCosts[(int) (production * 2)] * production;
+		costNoDonation =
+			powerCostConfig.powerCosts
+				[Mathf.Clamp((int) (production * 2), 0, powerCostConfig.powerCosts.Count - 1)] *
+			production;
 		if (ground.isOn)
-			costNoDonation += groundExtraCost * panelCount;
+			costNoDonation += GroundExtraCost * panelCount;
 		if (ceramics.isOn)
-			costNoDonation += ceramicsExtraCost * panelCount;
+			costNoDonation += CeramicsExtraCost * panelCount;
+		if (optimizer.isOn)
+			costNoDonation += optimizerCost * panelCount;
+
+		costNoDonation += CatalogCard.ExtraCost;
 		
 		costNoDonationLabel.text = costNoDonation.ToString();
 		if (farmer)
@@ -222,12 +265,13 @@ public class Manager : MonoBehaviour
 			if (activeFiveK) costWithDonation -= 5000;
 
 			if (lowHouseholdTax)
-				costWithDonation -= costWithDonation * 0.18f;
+				costWithDonation -= costWithDonation * 0.17f;
 			else
 				costWithDonation -= costWithDonation * 0.32f;
 		}
 
 		costWithDonationLabel.text = costWithDonation.ToString();
+		costWithDonationLastPageLabel.text = costWithDonation.ToString();
 	}
 
 	private void SetSaving(float production)
@@ -243,6 +287,7 @@ public class Manager : MonoBehaviour
 		installationPower = RoundToHalf(annualCost / providerKWhCost / 1000);
 		installationPowerLabel.text = installationPower.ToString();
 		CheckAvailabilityFiveKDonation();
+		catalogCard.SetInstallationPower(installationPower);
 	}
 
 	private float RoundToHalf(float value)
@@ -261,6 +306,12 @@ public class Manager : MonoBehaviour
 		monthlyKWhProductionLabel.text = monthlyKWhProduction.ToString();
 	}
 
+	private void SetCO2Saving()
+	{
+		co2SavingKG = RoundValue(annualKWhProduction * co2ReductionFactor, 1);
+		co2SavingKGLabel.text = co2SavingKG + "t";
+	}
+
 	private void CheckAvailabilityFiveKDonation()
 	{
 		if (fiveKDonation.interactable == installationPower <= fiveKDonationLimit)
@@ -275,94 +326,34 @@ public class Manager : MonoBehaviour
 		annualCostLabel.text = annualCost.ToString();
 	}
 
-	private float RoundValue(float value, int round)
+	public static float RoundValue(float value, int round)
 	{
 		return value - value % round;
 	}
 
 	private void Awake()
 	{
-		SetGroundToggle();
-		SlideValueHandler(150);
+		SetSliderValue(150);
 		ChangeCustomerBase(false);
 		StartCoroutine(DownloadConfig());
-		StartCoroutine(DownloadFromRemote(ConfigDownloadHandler));
 	}
 
-	private void SetGroundToggle()
+	private void SetFinalCost()
 	{
-		ground.onValueChanged.AddListener((x) => SetAllValues(slider.value));
-		ceramics.onValueChanged.AddListener((x) => SetAllValues(slider.value));
+		finalCost.text = costWithDonation + " zł";
 	}
 
 	private IEnumerator DownloadConfig()
 	{
-		config.DownloadFromRemote(ConfigDownloadHandler);
+		powerCostConfig.DownloadFromRemote(ConfigDownloadHandler);
+		groundPriceConfig.DownloadFromRemote(ConfigDownloadHandler);
+		catalogCard.DownloadFromRemote();
 		yield return null;
 	}
 
 	private void ConfigDownloadHandler(bool success)
 	{
 		Debug.Log("Download finish " + (success ? "Success" : "Failed"));
-		if (success) SlideValueHandler(150);
-	}
-
-	private IEnumerator DownloadFromRemote(Action<bool> callback)
-	{
-		var client = new WebClient();
-
-		var data = client.OpenRead(@"https://www.gft.pl/GroundPrice.htm");
-
-		if (data == null)
-		{
-			callback(false);
-			yield break;
-		}
-
-		var reader = new StreamReader(data);
-		string s;
-		float newValue;
-
-		s = reader.ReadLine();
-
-		if (s == null)
-		{
-			callback(false);
-			yield break;
-		}
-
-		if (float.TryParse(s, out newValue))
-		{
-			groundExtraCost = newValue;
-		}
-		else
-		{
-			callback(false);
-			yield break;
-		}
-
-		s = reader.ReadLine();
-
-		if (s == null)
-		{
-			callback(false);
-			yield break;
-		}
-
-		if (float.TryParse(s, out newValue))
-		{
-			ceramicsExtraCost = newValue;
-		}
-		else
-		{
-			callback(false);
-			yield break;
-		}
-
-		data.Close();
-		reader.Close();
-
-		callback(true);
-		yield return null;
+		if (success) SetSliderValue(150);
 	}
 }
