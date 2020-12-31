@@ -76,12 +76,12 @@ public class CatalogCard : MonoBehaviour
             {
                 if (catalogIndex < producer.catalogs.Capacity - 1 &&
                     producer.catalogs[catalogIndex + 1].power <= panelPower)
-                    catalogIndex++;
+                    panelCatalogIndex++;
             }
             else
             {
                 if (catalogIndex > 0 && producer.catalogs[catalogIndex - 1].power >= panelPower)
-                    catalogIndex--;
+                    panelCatalogIndex--;
             }
         }
 #endif

@@ -20,49 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cccc33d5-a8ef-4356-8680-bfe89bdcec93" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/DataGround.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DataGround.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DataPanels.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DataPanels.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Power.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Power.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CatalogCard.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CatalogCard.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Config.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Config/FalownikPDFConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Config/FalownikPDFConfig.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Config/GroundPriceConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Config/GroundPriceConfig.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Config/PanelsPDFConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Config/PanelsPDFConfig.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Config/PowerCostConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Config/RemoteConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Config/RemoteConfig.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Page4/Przyciski/ja-solar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Page4/Przyciski/ja-solar.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Page4/Przyciski/logo Longi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Page4/Przyciski/logo Longi.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Page4/Przyciski/logo winaico.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Page4/Przyciski/logo winaico.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/logo 1 v11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/logo 1 v11.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/animation.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/animation/Bip.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/animation/Bip.anim.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Photovoltaic/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Photovoltaic/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DataPower.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DataPower.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PanelsSizeConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PanelsSizeConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PowerCostConfig.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PowerCostConfig.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Config/PowerCostConfig.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ReportGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ReportGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Slide.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Slide.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserDataPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserDataPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Page1/przycisk 7.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Page1/przycisk 7.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Page1/przycisk 8.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Page1/przycisk 8.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CatalogCard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CatalogCard.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -152,7 +110,7 @@
       <workItem from="1598965159721" duration="192000" />
       <workItem from="1598965574228" duration="21000" />
       <workItem from="1605817554589" duration="12600000" />
-      <workItem from="1609351480468" duration="19743000" />
+      <workItem from="1609351480468" duration="19855000" />
     </task>
     <servers />
   </component>
