@@ -47,14 +47,14 @@ public class ReportGenerator : MonoBehaviour
 			CreateReportPage(i);
 		}
 
-		AddPanel();
-		AddFalownik();
-		
 		document.createPDF(Path.Combine(path, reportName + ".pdf"));
 
 		waitSending.SetActive(true);
 
 		yield return new WaitForEndOfFrame();
+
+		DownloadPanelPDF();
+		DownloadFalownikPDF();
 
 		smtpServer = new SmtpClient("smtp.gmail.com");
 		smtpServer.Port = 587;
@@ -78,7 +78,7 @@ public class ReportGenerator : MonoBehaviour
 		Debug.Log("Finish create report");
 	}
 
-	private void AddPanel()
+	private void DownloadPanelPDF()
 	{
 		using (var webClient = new WebClient())
 		{
@@ -86,11 +86,11 @@ public class ReportGenerator : MonoBehaviour
 		}
 	}
 
-	private void AddFalownik()
+	private void DownloadFalownikPDF()
 	{
 		using (var webClient = new WebClient())
 		{
-			webClient.DownloadFile(CatalogCard.PanelsCatalog.url, CatalogCard.FalownikSaveName);
+			webClient.DownloadFile(CatalogCard.FalownikCatalog.url, CatalogCard.FalownikSaveName);
 		}
 	}
 

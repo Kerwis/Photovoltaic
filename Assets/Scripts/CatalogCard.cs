@@ -19,9 +19,14 @@ public class CatalogCard : MonoBehaviour
     public static FalownikPDFConfig.Catalog FalownikCatalog = new FalownikPDFConfig.Catalog();
     private int panelCatalogIndex = 0;
     private Vector3 lastMousePosition = Vector3.zero;
-    public static string PanelSaveName => PanelsProducer.name + PanelsCatalog.power + ".pdf";
+
+    public static string PanelSaveName =>
+        Path.Combine(Application.persistentDataPath, PanelsProducer.name + PanelsCatalog.power + ".pdf");
+
+    public static string FalownikSaveName => 
+        Path.Combine(Application.persistentDataPath, FalownikProducer.name + FalownikCatalog.powerMax + ".pdf");
+
     public static float ExtraCost => PanelsCatalog.extraCost + FalownikCatalog.extraCost;
-    public static string FalownikSaveName => FalownikProducer.name + FalownikCatalog + ".pdf";
 
     public void SetPanelNo(int index)
     {
@@ -54,11 +59,18 @@ public class CatalogCard : MonoBehaviour
         int direction = 0;
         panelPower = Manager.RoundValue(panelPower, 5);
 #if UNITY_EDITOR
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && PanelsProducer.catalogs.Count > 1)
         {
             if ((Input.mousePosition - lastMousePosition).x > 0)
             {
-                if (panelCatalogIndex < PanelsProducer.catalogs.Capacity - 1 && PanelsProducer.catalogs[panelCatalogIndex + 1].power <= panelPower)
+#else
+        if (Input.touchCount > 0)
+        {
+            if (Input.GetTouch(0).deltaPosition.x > 0)
+            {
+#endif
+                if (panelCatalogIndex < PanelsProducer.catalogs.Count - 1 &&
+                    PanelsProducer.catalogs[panelCatalogIndex + 1].power <= panelPower)
                     panelCatalogIndex++;
             }
             else
@@ -69,24 +81,7 @@ public class CatalogCard : MonoBehaviour
 
             lastMousePosition = Input.mousePosition;
         }
-#else
-        if (Input.touchCount > 0)
-        {
-            if (Input.GetTouch(0).deltaPosition.x > 0)
-            {
-                if (panelCatalogIndex < PanelsProducer.catalogs.Capacity - 1 &&
-                    PanelsProducer.catalogs[panelCatalogIndex + 1].power <= panelPower)
-                    panelCatalogIndex++;
-            }
-            else
-            {
-                if (panelCatalogIndex > 0 && PanelsProducer.catalogs[panelCatalogIndex - 1].power >= panelPower)
-                    panelCatalogIndex--;
-            }
-        }
-#endif
-        
-        
+
         panelCatalogIndex = Mathf.Clamp(panelCatalogIndex, 0, PanelsProducer.catalogs.Count - 1);
         
         PanelsCatalog = PanelsProducer.catalogs[panelCatalogIndex];
