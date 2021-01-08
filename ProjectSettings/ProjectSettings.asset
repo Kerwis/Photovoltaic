@@ -170,7 +170,7 @@ PlayerSettings:
     iPhone: com.EcoLife.MyPower
   buildNumber:
     iPhone: 3
-  AndroidBundleVersionCode: 6
+  AndroidBundleVersionCode: 7
   AndroidMinSdkVersion: 21
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
