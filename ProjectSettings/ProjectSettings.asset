@@ -169,7 +169,7 @@ PlayerSettings:
     Standalone: com.Company.ProductName
     iPhone: com.EcoLife.MyPower
   buildNumber:
-    iPhone: 3
+    iPhone: 5
   AndroidBundleVersionCode: 6
   AndroidMinSdkVersion: 21
   AndroidTargetSdkVersion: 0
@@ -267,7 +267,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 16fb9c2b496d347db828600eb50313c9, type: 3}
+      m_Icon: {fileID: 2800000, guid: 487792651b29e4d469223c0b4ad45959, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -373,7 +373,37 @@ PlayerSettings:
   - m_BuildTarget: iPhone
     m_Icons:
     - m_Textures:
-      - {fileID: 2800000, guid: 16fb9c2b496d347db828600eb50313c9, type: 3}
+      - {fileID: 2800000, guid: 487792651b29e4d469223c0b4ad45959, type: 3}
+      m_Width: 180
+      m_Height: 180
+      m_Kind: 0
+      m_SubKind: iPhone
+    - m_Textures:
+      - {fileID: 0}
+      m_Width: 120
+      m_Height: 120
+      m_Kind: 0
+      m_SubKind: iPhone
+    - m_Textures:
+      - {fileID: 2800000, guid: 487792651b29e4d469223c0b4ad45959, type: 3}
+      m_Width: 167
+      m_Height: 167
+      m_Kind: 0
+      m_SubKind: iPad
+    - m_Textures:
+      - {fileID: 0}
+      m_Width: 152
+      m_Height: 152
+      m_Kind: 0
+      m_SubKind: iPad
+    - m_Textures:
+      - {fileID: 0}
+      m_Width: 76
+      m_Height: 76
+      m_Kind: 0
+      m_SubKind: iPad
+    - m_Textures:
+      - {fileID: 2800000, guid: 487792651b29e4d469223c0b4ad45959, type: 3}
       m_Width: 120
       m_Height: 120
       m_Kind: 3
@@ -385,7 +415,7 @@ PlayerSettings:
       m_Kind: 3
       m_SubKind: iPhone
     - m_Textures:
-      - {fileID: 2800000, guid: 16fb9c2b496d347db828600eb50313c9, type: 3}
+      - {fileID: 2800000, guid: 487792651b29e4d469223c0b4ad45959, type: 3}
       m_Width: 80
       m_Height: 80
       m_Kind: 3
@@ -397,7 +427,7 @@ PlayerSettings:
       m_Kind: 3
       m_SubKind: iPad
     - m_Textures:
-      - {fileID: 2800000, guid: 16fb9c2b496d347db828600eb50313c9, type: 3}
+      - {fileID: 2800000, guid: 487792651b29e4d469223c0b4ad45959, type: 3}
       m_Width: 87
       m_Height: 87
       m_Kind: 1
@@ -415,7 +445,7 @@ PlayerSettings:
       m_Kind: 1
       m_SubKind: iPhone
     - m_Textures:
-      - {fileID: 2800000, guid: 16fb9c2b496d347db828600eb50313c9, type: 3}
+      - {fileID: 2800000, guid: 487792651b29e4d469223c0b4ad45959, type: 3}
       m_Width: 58
       m_Height: 58
       m_Kind: 1
@@ -427,7 +457,7 @@ PlayerSettings:
       m_Kind: 1
       m_SubKind: iPad
     - m_Textures:
-      - {fileID: 2800000, guid: 16fb9c2b496d347db828600eb50313c9, type: 3}
+      - {fileID: 2800000, guid: 487792651b29e4d469223c0b4ad45959, type: 3}
       m_Width: 60
       m_Height: 60
       m_Kind: 2
@@ -439,7 +469,7 @@ PlayerSettings:
       m_Kind: 2
       m_SubKind: iPhone
     - m_Textures:
-      - {fileID: 2800000, guid: 16fb9c2b496d347db828600eb50313c9, type: 3}
+      - {fileID: 2800000, guid: 487792651b29e4d469223c0b4ad45959, type: 3}
       m_Width: 40
       m_Height: 40
       m_Kind: 2
@@ -451,39 +481,11 @@ PlayerSettings:
       m_Kind: 2
       m_SubKind: iPad
     - m_Textures:
-      - {fileID: 2800000, guid: 16fb9c2b496d347db828600eb50313c9, type: 3}
+      - {fileID: 2800000, guid: 487792651b29e4d469223c0b4ad45959, type: 3}
       m_Width: 1024
       m_Height: 1024
       m_Kind: 4
       m_SubKind: App Store
-    - m_Textures:
-      - {fileID: 2800000, guid: 16fb9c2b496d347db828600eb50313c9, type: 3}
-      m_Width: 180
-      m_Height: 180
-      m_Kind: 0
-      m_SubKind: iPhone
-    - m_Textures:
-      - {fileID: 0}
-      m_Width: 120
-      m_Height: 120
-      m_Kind: 0
-      m_SubKind: iPhone
-    - m_Textures:
-      - {fileID: 2800000, guid: 16fb9c2b496d347db828600eb50313c9, type: 3}
-      m_Width: 167
-      m_Height: 167
-      m_Kind: 0
-      m_SubKind: iPad
-    - m_Textures: []
-      m_Width: 152
-      m_Height: 152
-      m_Kind: 0
-      m_SubKind: iPad
-    - m_Textures: []
-      m_Width: 76
-      m_Height: 76
-      m_Kind: 0
-      m_SubKind: iPad
   m_BuildTargetBatching: []
   m_BuildTargetGraphicsJobs:
   - m_BuildTarget: MacStandaloneSupport
