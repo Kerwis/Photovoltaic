@@ -59,13 +59,14 @@ public class CatalogCard : MonoBehaviour
     {
         int direction = 0;
         panelPower = Manager.RoundValue(panelPower, 5);
+        panelCatalogIndex = Mathf.Clamp(panelCatalogIndex, 0, PanelsProducer.catalogs.Count - 1);
 #if UNITY_EDITOR
         if (Input.GetMouseButton(0) && PanelsProducer.catalogs.Count > 1)
         {
             if ((Input.mousePosition - lastMousePosition).x > 0)
             {
 #else
-        if (Input.touchCount > 0)
+        if (Input.touchCount > 0 && PanelsProducer.catalogs.Count > 1)
         {
             if (Input.GetTouch(0).deltaPosition.x > 0)
             {
