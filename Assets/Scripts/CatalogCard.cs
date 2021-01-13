@@ -40,6 +40,7 @@ public class CatalogCard : MonoBehaviour
     {
         FalownikProducer = falownikPdfConfig.producers[index];
         SetInstallationPower(Manager.InstallationPower);
+        slider.onValueChanged.Invoke(slider.value);
     }
 
     public void SetInstallationPower(float installationPower)
