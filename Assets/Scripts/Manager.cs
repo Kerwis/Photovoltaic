@@ -45,7 +45,7 @@ public class Manager : MonoBehaviour
 	public Text panelAreaLabel;
 	public Text areaLabel;
 
-	public Text costWithDonationLastPageLabel;
+	public Text costWithDonationLastPageLabel;//TODO change to costWithNoDonationLastPageLabel -- add No
 	public InputField finalCost;
 
 	public GameObject sliderHint;
@@ -248,8 +248,7 @@ public class Manager : MonoBehaviour
 			costNoDonation += optimizerCost * panelCount;
 
 		costNoDonation += CatalogCard.ExtraCost;
-		
-		costNoDonationLabel.text = costNoDonation.ToString();
+
 		if (farmer)
 		{
 			//For farmer
@@ -270,8 +269,9 @@ public class Manager : MonoBehaviour
 				costWithDonation -= costWithDonation * 0.32f;
 		}
 
+		costNoDonationLabel.text = costNoDonation.ToString();
 		costWithDonationLabel.text = costWithDonation.ToString();
-		costWithDonationLastPageLabel.text = costWithDonation.ToString();
+		costWithDonationLastPageLabel.text = costNoDonation.ToString();
 	}
 
 	private void SetSaving(float production)

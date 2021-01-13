@@ -169,8 +169,13 @@ PlayerSettings:
     Standalone: com.Company.ProductName
     iPhone: com.EcoLife.MyPower
   buildNumber:
+<<<<<<< .merge_file_9tj1S0
     iPhone: 5
   AndroidBundleVersionCode: 6
+=======
+    iPhone: 3
+  AndroidBundleVersionCode: 7
+>>>>>>> .merge_file_RyNZEM
   AndroidMinSdkVersion: 21
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
