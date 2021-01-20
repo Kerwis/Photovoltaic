@@ -78,7 +78,7 @@ public class Manager : MonoBehaviour
 	private float investmentBackAfterNoDonation;
 	private float investmentBackAfterWithDonation;
 
-	private float panelCount;
+	private int panelCount;
 	private float area;
 	private float panelArea;
 
@@ -116,7 +116,6 @@ public class Manager : MonoBehaviour
 
 	public void SlideValueHandler(float value)
 	{
-		sliderHint.SetActive(false);
 		SetSliderValue(value);
 	}
 
@@ -197,8 +196,7 @@ public class Manager : MonoBehaviour
 	{
 		//panelPowerLabel.text = panelPower.ToString();
 
-		panelCount = installationPower * 1000 / panelPower;
-		panelCount = Mathf.Ceil(panelCount);
+		panelCount = (int) Mathf.Ceil(installationPower * 1000 / panelPower);
 		panelCountLabel.text = panelCount.ToString();
 
 		if (panelPower > 370)
@@ -247,7 +245,7 @@ public class Manager : MonoBehaviour
 		if (optimizer.isOn)
 			costNoDonation += optimizerCost * panelCount;
 
-		costNoDonation += CatalogCard.ExtraCost;
+		costNoDonation += CatalogCard.ExtraCost(panelCount);
 
 		if (farmer)
 		{

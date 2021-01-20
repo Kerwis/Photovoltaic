@@ -26,7 +26,7 @@ public class CatalogCard : MonoBehaviour
     public static string FalownikSaveName => 
         Path.Combine(Application.persistentDataPath, FalownikProducer.name + FalownikCatalog.powerMax + ".pdf");
 
-    public static float ExtraCost => PanelsCatalog.extraCost + FalownikCatalog.extraCost;
+    public static float ExtraCost(int panelsCount) => PanelsCatalog.extraCost * panelsCount + FalownikCatalog.extraCost;
 
     public void SetPanelNo(int index)
     {
