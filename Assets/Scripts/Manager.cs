@@ -338,7 +338,7 @@ public class Manager : MonoBehaviour
 
 	private void SetFinalCost()
 	{
-		finalCost.text = costWithDonation + " zł";
+		finalCost.text = costNoDonation + " zł";
 	}
 
 	private IEnumerator DownloadConfig()
